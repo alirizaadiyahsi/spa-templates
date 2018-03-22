@@ -7,9 +7,9 @@ namespace SpaTemplates.EntityFrameworkCore
     public class UnitOfWork : IUnitOfWork, IRepositoryFactory
     {
         private bool _disposed;
-        public DbContext DbContext { get; }
+        public SpaTemplatesContext DbContext { get; }
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(SpaTemplatesContext context)
         {
             DbContext = context ?? throw new ArgumentNullException(nameof(context));
         }

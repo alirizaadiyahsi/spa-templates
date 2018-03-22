@@ -7,11 +7,13 @@ namespace SpaTemplates.Application.Users
 {
     public class UserApplicationService : IUserApplicationService
     {
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IRepository<ApplicationUser> _userRepository;
 
-        public UserApplicationService(IRepository<ApplicationUser> userRepository)
+        public UserApplicationService(IUnitOfWork unitOfWork)
         {
-            _userRepository = userRepository;
+            _unitOfWork = unitOfWork;
+            _userRepository = unitOfWork.GetRepository<ApplicationUser>();
         }
 
         public async Task<List<ApplicationUser>> GetAllAsync()
