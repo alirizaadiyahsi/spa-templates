@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaTemplates.Web.Client.Rea
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaTemplates.Web.Client.Vue", "src\SpaTemplates.Web.Client.Vue\SpaTemplates.Web.Client.Vue.csproj", "{1B454BD7-79D0-477A-9B29-03DCD60C1160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaTemplates.Web.Server", "src\SpaTemplates.Web.Server\SpaTemplates.Web.Server.csproj", "{81EDDAC4-6BEE-403B-A848-7ED73AC1C4B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaTemplates.Web.Server", "src\SpaTemplates.Web.Server\SpaTemplates.Web.Server.csproj", "{81EDDAC4-6BEE-403B-A848-7ED73AC1C4B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A74FB60A-A6DB-4A35-85BE-F1D82E365EC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
