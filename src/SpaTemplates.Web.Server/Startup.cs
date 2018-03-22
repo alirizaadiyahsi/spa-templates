@@ -50,7 +50,7 @@ namespace SpaTemplates.Web.Server
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetService<SpaTemplatesContext>();
-                DataSeeder.SeedUsers(context).Wait();
+                DataSeeder.SeedData(context).Wait();
             }
 
             if (env.IsDevelopment())

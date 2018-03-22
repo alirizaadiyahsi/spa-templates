@@ -8,7 +8,11 @@ namespace SpaTemplates.EntityFrameworkCore
 {
     public class DataSeeder
     {
-        public static async Task SeedUsers(SpaTemplatesContext context)
+        private static readonly string[] Summaries = {
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        };
+
+        public static async Task SeedData(SpaTemplatesContext context)
         {
             if (!context.Users.Any())
             {
@@ -53,8 +57,23 @@ namespace SpaTemplates.EntityFrameworkCore
                 };
 
                 context.AddRange(users);
-                await context.SaveChangesAsync();
             }
+
+            if (!context.WeatherForecasts.Any())
+            {
+                var rng = new Random();
+                var weatherForecasts = Enumerable.Range(1, 10).Select(index => new WeatherForecast
+                {
+                    Id = Guid.NewGuid(),
+                    DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
+                    TemperatureC = rng.Next(-20, 55),
+                    Summary = Summaries[rng.Next(Summaries.Length)]
+                });
+
+                context.AddRange(weatherForecasts);
+            }
+
+            await context.SaveChangesAsync();
         }
     }
 }

@@ -10,12 +10,16 @@ namespace SpaTemplates.EntityFrameworkCore
         public SpaTemplatesContext(DbContextOptions options)
             : base(options)
         {
-
+            
         }
+
+        public DbSet<WeatherForecast> WeatherForecasts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<WeatherForecast>().ToTable("WeatherForecast");
 
             modelBuilder.Entity<ApplicationUser>().ToTable("User");
             modelBuilder.Entity<ApplicationRole>().ToTable("Role");

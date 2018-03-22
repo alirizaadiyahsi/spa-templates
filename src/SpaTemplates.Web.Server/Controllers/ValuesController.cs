@@ -1,19 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SpaTemplates.Application.Users;
 
 namespace SpaTemplates.Web.Server.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private readonly IUserApplicationService _userApplicationService;
+
+        public ValuesController(IUserApplicationService userApplicationService)
+        {
+            _userApplicationService = userApplicationService;
+        }
+
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return (await _userApplicationService.GetAllAsync()).Select(u => u.UserName);
         }
 
         // GET api/values/5

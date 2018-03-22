@@ -11,9 +11,10 @@ using System;
 namespace SpaTemplates.EntityFrameworkCore.Migrations
 {
     [DbContext(typeof(SpaTemplatesContext))]
-    partial class SpaTemplatesContextModelSnapshot : ModelSnapshot
+    [Migration("20180322203947_Added_WeatherForecast_Entity")]
+    partial class Added_WeatherForecast_Entity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
