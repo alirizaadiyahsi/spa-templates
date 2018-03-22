@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpaTemplates.Domain\SpaTemplates.Domain.csproj" />
+    <ProjectReference Include="..\SpaTemplates.EntityFrameworkCore\SpaTemplates.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

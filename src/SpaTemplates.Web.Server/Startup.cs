@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SpaTemplates.Application;
 using SpaTemplates.Domain;
 using SpaTemplates.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.Swagger;
@@ -31,6 +32,7 @@ namespace SpaTemplates.Web.Server
                 .AddDefaultTokenProviders();
 
             services.AddSpaTemplatesEntityFrameworkCore();
+            services.AddSpaTemplatesApplication();
 
             services.AddMvc();
 

@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaTemplates.EntityFramewor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaTemplates.Domain", "src\SpaTemplates.Domain\SpaTemplates.Domain.csproj", "{3B254D08-0700-4798-89B5-70A5ED547474}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaTemplates.Application", "src\SpaTemplates.Application\SpaTemplates.Application.csproj", "{CED91DAC-2D42-4F4B-B601-38A2F0109172}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{3B254D08-0700-4798-89B5-70A5ED547474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B254D08-0700-4798-89B5-70A5ED547474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B254D08-0700-4798-89B5-70A5ED547474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED91DAC-2D42-4F4B-B601-38A2F0109172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED91DAC-2D42-4F4B-B601-38A2F0109172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED91DAC-2D42-4F4B-B601-38A2F0109172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED91DAC-2D42-4F4B-B601-38A2F0109172}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{81EDDAC4-6BEE-403B-A848-7ED73AC1C4B6} = {499C85F6-4105-4C30-A181-AC5FEC915901}
 		{12317B31-BB1D-4661-9A08-9BBEB2A5F3D7} = {499C85F6-4105-4C30-A181-AC5FEC915901}
 		{3B254D08-0700-4798-89B5-70A5ED547474} = {499C85F6-4105-4C30-A181-AC5FEC915901}
+		{CED91DAC-2D42-4F4B-B601-38A2F0109172} = {499C85F6-4105-4C30-A181-AC5FEC915901}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ACDE75CD-0029-4DBB-9141-B14C74351C24}

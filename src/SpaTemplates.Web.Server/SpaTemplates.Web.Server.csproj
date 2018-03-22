@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SpaTemplates.Application\SpaTemplates.Application.csproj" />
     <ProjectReference Include="..\SpaTemplates.EntityFrameworkCore\SpaTemplates.EntityFrameworkCore.csproj" />
   </ItemGroup>
 

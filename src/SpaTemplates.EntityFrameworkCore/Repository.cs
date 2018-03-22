@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace SpaTemplates.EntityFrameworkCore
@@ -12,6 +14,11 @@ namespace SpaTemplates.EntityFrameworkCore
         {
             DbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             DbSet = DbContext.Set<TEntity>();
+        }
+
+        public async Task<List<TEntity>> GetAllAsync()
+        {
+            return await DbSet.ToListAsync();
         }
     }
 }
