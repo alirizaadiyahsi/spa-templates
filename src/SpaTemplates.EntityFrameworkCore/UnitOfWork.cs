@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace SpaTemplates.EntityFrameworkCore
 {
+    //todo: redesign unit of work
     public class UnitOfWork : IUnitOfWork, IRepositoryFactory
     {
         private bool _disposed;

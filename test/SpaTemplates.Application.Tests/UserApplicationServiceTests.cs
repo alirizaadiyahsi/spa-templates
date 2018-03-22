@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NSubstitute;
 using SpaTemplates.Application.Users;
+using SpaTemplates.Domain;
+using SpaTemplates.EntityFrameworkCore;
 using Xunit;
 
 namespace SpaTemplates.Application.Tests
@@ -12,9 +14,10 @@ namespace SpaTemplates.Application.Tests
         public UserApplicationServiceTests()
         {
             //todo: mock appservice dependencies
-            _userApplicationService = Substitute.For<IUserApplicationService>();
-            _userApplicationService.GetAllAsync()
+            var userRepository = Substitute.For<IRepository<ApplicationUser>>();
+            userRepository.GetAllAsync()
                 .Returns(GetInitializedDbContext().Users.ToListAsync());
+            _userApplicationService = new UserApplicationService(userRepository);
         }
 
         [Fact]

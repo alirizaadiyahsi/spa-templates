@@ -9,9 +9,9 @@ namespace SpaTemplates.Application.WeatherForecasts
     {
         private readonly IRepository<WeatherForecast> _weatherForecastRepository;
 
-        public WeatherForecastApplicationService(IUnitOfWork unitOfWork)
+        public WeatherForecastApplicationService(IRepository<WeatherForecast> weatherForecastRepository)
         {
-            _weatherForecastRepository = unitOfWork.GetRepository<WeatherForecast>();
+            _weatherForecastRepository = weatherForecastRepository;
         }
         //todo: return dto instead of entity
         public async Task<List<WeatherForecast>> GetAllAsync()

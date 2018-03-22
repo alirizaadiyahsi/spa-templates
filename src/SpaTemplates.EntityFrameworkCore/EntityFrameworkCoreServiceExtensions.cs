@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SpaTemplates.EntityFrameworkCore
 {
@@ -6,8 +7,10 @@ namespace SpaTemplates.EntityFrameworkCore
     {
         public static IServiceCollection AddSpaTemplatesEntityFrameworkCore(this IServiceCollection services)
         {
-            services.AddTransient<IRepositoryFactory, UnitOfWork>();
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            //services.AddTransient<IRepositoryFactory, UnitOfWork>();
+            //services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient<DbContext, SpaTemplatesContext>();
 
             return services;
         }
