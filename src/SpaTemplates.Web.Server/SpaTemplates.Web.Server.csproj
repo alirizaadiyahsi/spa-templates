@@ -18,4 +18,8 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SpaTemplates.EntityFrameworkCore\SpaTemplates.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
 </Project>

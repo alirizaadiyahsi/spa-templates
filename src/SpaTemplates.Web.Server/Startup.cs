@@ -1,8 +1,12 @@
 ﻿using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SpaTemplates.Domain;
+using SpaTemplates.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace SpaTemplates.Web.Server
@@ -19,6 +23,15 @@ namespace SpaTemplates.Web.Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<SpaTemplatesContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddEntityFrameworkStores<SpaTemplatesContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddSpaTemplatesEntityFrameworkCore();
+
             services.AddMvc();
 
             services.AddCors();
