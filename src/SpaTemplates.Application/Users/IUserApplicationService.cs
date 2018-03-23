@@ -7,5 +7,7 @@ namespace SpaTemplates.Application.Users
     public interface IUserApplicationService
     {
         Task<List<ApplicationUser>> GetAllAsync();
+
+        void Insert();
     }
 }

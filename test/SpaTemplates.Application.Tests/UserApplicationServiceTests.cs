@@ -13,7 +13,6 @@ namespace SpaTemplates.Application.Tests
 
         public UserApplicationServiceTests()
         {
-            //todo: mock appservice dependencies
             var userRepository = Substitute.For<IRepository<ApplicationUser>>();
             userRepository.GetAllAsync()
                 .Returns(GetInitializedDbContext().Users.ToListAsync());

@@ -10,7 +10,7 @@ namespace SpaTemplates.EntityFrameworkCore
             //services.AddTransient<IRepositoryFactory, UnitOfWork>();
             //services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
-            services.AddTransient<DbContext, SpaTemplatesContext>();
+            services.AddScoped<SpaTemplatesContext>();
 
             return services;
         }

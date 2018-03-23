@@ -2,12 +2,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SpaTemplates.Application;
 using SpaTemplates.Domain;
 using SpaTemplates.EntityFrameworkCore;
+using SpaTemplates.Web.Server.ActionFilters;
+using SpaTemplates.Web.Server.Controllers;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace SpaTemplates.Web.Server
@@ -34,7 +37,7 @@ namespace SpaTemplates.Web.Server
             services.AddSpaTemplatesEntityFrameworkCore();
             services.AddSpaTemplatesApplication();
 
-            services.AddMvc();
+            services.AddMvc(options => options.Filters.Add(new ServiceFilterAttribute(typeof(MyFilter))));
 
             services.AddCors();
 
@@ -42,6 +45,8 @@ namespace SpaTemplates.Web.Server
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
             });
+
+            services.AddTransient<MyFilter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
