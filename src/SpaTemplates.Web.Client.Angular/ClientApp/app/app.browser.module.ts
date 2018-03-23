@@ -4,7 +4,7 @@ import { AppModuleShared } from './app.shared.module';
 import { AppComponent } from './components/app/app.component';
 
 @NgModule({
-    bootstrap: [ AppComponent ],
+    bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppModuleShared
@@ -17,5 +17,5 @@ export class AppModule {
 }
 
 export function getBaseUrl() {
-    return document.getElementsByTagName('base')[0].href;
+    return "http://localhost:61110/";
 }
