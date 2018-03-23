@@ -10,5 +10,6 @@ import { AppComponent } from './components/app/app.component';
         AppModuleShared
     ]
 })
+
 export class AppModule {
 }
