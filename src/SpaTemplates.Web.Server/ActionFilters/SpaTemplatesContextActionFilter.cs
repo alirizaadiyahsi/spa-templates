@@ -3,11 +3,11 @@ using SpaTemplates.EntityFrameworkCore;
 
 namespace SpaTemplates.Web.Server.ActionFilters
 {
-    public class MyFilter : IActionFilter
+    public class SpaTemplatesContextActionFilter : IActionFilter
     {
         private readonly SpaTemplatesContext _context;
 
-        public MyFilter(SpaTemplatesContext context)
+        public SpaTemplatesContextActionFilter(SpaTemplatesContext context)
         {
             _context = context;
         }

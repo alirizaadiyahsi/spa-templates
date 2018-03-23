@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using SpaTemplates.Domain;
 
 namespace SpaTemplates.EntityFrameworkCore
 {
@@ -21,11 +19,6 @@ namespace SpaTemplates.EntityFrameworkCore
         public async Task<List<TEntity>> GetAllAsync()
         {
             return await DbSet.ToListAsync();
-        }
-
-        public void Insert(TEntity appuser)
-        {
-            DbSet.Add(appuser);
         }
     }
 }

@@ -20,8 +20,6 @@ namespace SpaTemplates.Web.Server.Controllers
         [HttpGet]
         public async Task<IEnumerable<string>> Get()
         {
-            _userApplicationService.Insert();
-
             return (await _userApplicationService.GetAllAsync()).Select(u => u.UserName);
         }
 
