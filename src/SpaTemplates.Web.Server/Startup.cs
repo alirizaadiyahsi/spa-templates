@@ -37,7 +37,9 @@ namespace SpaTemplates.Web.Server
             services.AddSpaTemplatesEntityFrameworkCore();
             services.AddSpaTemplatesApplication();
 
-            services.AddMvc(options => options.Filters.Add(new ServiceFilterAttribute(typeof(MyFilter))));
+            //todo:remove commented line if DbContext.SaveChange() is working
+            services.AddMvc(options => options.Filters.Add<SpaTemplatesContextActionFilter>());
+            //services.AddMvc(options => options.Filters.Add(new ServiceFilterAttribute(typeof(SpaTemplatesContextActionFilter))));
 
             services.AddCors();
 
@@ -46,7 +48,7 @@ namespace SpaTemplates.Web.Server
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
             });
 
-            services.AddTransient<MyFilter>();
+            services.AddTransient<SpaTemplatesContextActionFilter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
