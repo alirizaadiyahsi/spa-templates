@@ -1,6 +1,6 @@
 ﻿namespace SpaTemplates.Application.WeatherForecasts
 {
-    public class WeatherForecastDto
+    public class WeatherForecastDto : EntityDto
     {
         public string DateFormatted { get; set; }
 
