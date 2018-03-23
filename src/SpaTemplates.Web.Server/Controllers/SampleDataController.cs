@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SpaTemplates.Application.WeatherForecasts;
-using SpaTemplates.Domain;
 
 namespace SpaTemplates.Web.Server.Controllers
 {
@@ -17,7 +16,7 @@ namespace SpaTemplates.Web.Server.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IEnumerable<WeatherForecast>> WeatherForecasts()
+        public async Task<IEnumerable<WeatherForecastDto>> WeatherForecasts()
         {
             return await _weatherForecastApplicationService.GetAllAsync();
         }

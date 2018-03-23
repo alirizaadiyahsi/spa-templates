@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using SpaTemplates.Domain;
 using SpaTemplates.EntityFrameworkCore;
 
@@ -13,10 +14,10 @@ namespace SpaTemplates.Application.WeatherForecasts
         {
             _weatherForecastRepository = weatherForecastRepository;
         }
-        //todo: return dto instead of entity
-        public async Task<List<WeatherForecast>> GetAllAsync()
+
+        public async Task<List<WeatherForecastDto>> GetAllAsync()
         {
-            return await _weatherForecastRepository.GetAllAsync();
+            return Mapper.Map<List<WeatherForecastDto>>(await _weatherForecastRepository.GetAllAsync());
         }
     }
 }

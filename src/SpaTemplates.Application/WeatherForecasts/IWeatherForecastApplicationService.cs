@@ -6,6 +6,6 @@ namespace SpaTemplates.Application.WeatherForecasts
 {
     public interface IWeatherForecastApplicationService
     {
-        Task<List<WeatherForecast>> GetAllAsync();
+        Task<List<WeatherForecastDto>> GetAllAsync();
     }
 }

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SpaTemplates.Domain\SpaTemplates.Domain.csproj" />
     <ProjectReference Include="..\SpaTemplates.EntityFrameworkCore\SpaTemplates.EntityFrameworkCore.csproj" />
   </ItemGroup>
