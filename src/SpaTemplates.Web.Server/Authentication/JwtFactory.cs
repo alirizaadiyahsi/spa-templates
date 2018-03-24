@@ -22,13 +22,14 @@ namespace SpaTemplates.Web.Server.Authentication
         public async Task<string> GenerateEncodedToken(string userName, ClaimsIdentity identity)
         {
             var claims = new[]
-         {
-                 new Claim(JwtRegisteredClaimNames.Sub, userName),
-                 new Claim(JwtRegisteredClaimNames.Jti, await _jwtOptions.JtiGenerator()),
-                 new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(_jwtOptions.IssuedAt).ToString(), ClaimValueTypes.Integer64),
-                 identity.FindFirst(JwtConstants.Strings.JwtClaimIdentifiers.Role),
-                 identity.FindFirst(JwtConstants.Strings.JwtClaimIdentifiers.Id)
-             };
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, userName),
+                new Claim(JwtRegisteredClaimNames.Jti, await _jwtOptions.JtiGenerator()),
+                new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(_jwtOptions.IssuedAt).ToString(),
+                    ClaimValueTypes.Integer64),
+                identity.FindFirst(JwtConstants.Strings.JwtClaimIdentifiers.Role),
+                identity.FindFirst(JwtConstants.Strings.JwtClaimIdentifiers.Id)
+            };
 
             // Create the JWT security token and encode it.
             var jwt = new JwtSecurityToken(

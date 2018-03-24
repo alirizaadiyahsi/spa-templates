@@ -89,8 +89,11 @@ namespace SpaTemplates.Web.Server
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("ApiUser",
-                    policy => policy.RequireClaim(JwtConstants.Strings.JwtClaimIdentifiers.Role,
-                        JwtConstants.Strings.JwtClaims.ApiAccess));
+                    policy =>
+                        policy.RequireClaim(
+                            JwtConstants.Strings.JwtClaimIdentifiers.Role,
+                            JwtConstants.Strings.JwtClaims.ApiAccess)
+                );
             });
 
             services.AddTransient<SpaTemplatesContextActionFilter>();
