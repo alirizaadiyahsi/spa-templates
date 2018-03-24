@@ -17,8 +17,8 @@ namespace SpaTemplates.Web.Server.Controllers
             _userManager = userManager;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody]RegisterViewModel model)
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Register([FromBody]RegisterViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -35,7 +35,7 @@ namespace SpaTemplates.Web.Server.Controllers
 
             if (!result.Succeeded)
             {
-                return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
+                return new BadRequestObjectResult(ErrorHelper.AddErrorsToModelState(result, ModelState));
             }
 
             return new OkObjectResult("Account created");

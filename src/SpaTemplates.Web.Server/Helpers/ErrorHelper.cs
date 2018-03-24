@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace SpaTemplates.Web.Server.Helpers
 {
-    public static class Errors
+    public static class ErrorHelper
     {
         public static ModelStateDictionary AddErrorsToModelState(IdentityResult identityResult, ModelStateDictionary modelState)
         {
