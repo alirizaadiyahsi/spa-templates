@@ -15,6 +15,7 @@ namespace SpaTemplates.Application
                 config.CreateMap<WeatherForecast, WeatherForecastDto>();
             });
 
+            services.AddAutoMapper(x => x.AddProfile(new ApplicationMappingProfile()));
             services.AddTransient<IUserApplicationService, UserApplicationService>();
             services.AddTransient<IWeatherForecastApplicationService, WeatherForecastApplicationService>();
 
