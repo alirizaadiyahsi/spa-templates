@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using SpaTemplates.Application.Users;
 using SpaTemplates.Application.WeatherForecasts;
-using SpaTemplates.Domain;
 
 namespace SpaTemplates.Application
 {
@@ -10,11 +9,6 @@ namespace SpaTemplates.Application
     {
         public static IServiceCollection AddSpaTemplatesApplication(this IServiceCollection services)
         {
-            Mapper.Initialize(config =>
-            {
-                config.CreateMap<WeatherForecast, WeatherForecastDto>();
-            });
-
             services.AddAutoMapper(x => x.AddProfile(new ApplicationMappingProfile()));
             services.AddTransient<IUserApplicationService, UserApplicationService>();
             services.AddTransient<IWeatherForecastApplicationService, WeatherForecastApplicationService>();

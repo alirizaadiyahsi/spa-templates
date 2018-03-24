@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SpaTemplates.Domain;
@@ -17,6 +18,7 @@ namespace SpaTemplates.Web.Server.Controllers
             _userManager = userManager;
         }
 
+        [HttpPost]
         public async Task<IActionResult> Post([FromBody]RegisterViewModel model)
         {
             if (!ModelState.IsValid)
@@ -26,8 +28,8 @@ namespace SpaTemplates.Web.Server.Controllers
 
             var applicationUser = new ApplicationUser
             {
-                Email = model.Email,
-                UserName = model.Email
+                UserName = model.UserName,
+                Email = model.Email
             };
 
             var result = await _userManager.CreateAsync(applicationUser, model.Password);
