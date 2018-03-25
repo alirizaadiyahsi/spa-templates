@@ -3,10 +3,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SpaTemplates.Application.WeatherForecasts;
+using SpaTemplates.Web.Server.AppConsts;
 
 namespace SpaTemplates.Web.Server.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = SpaTemplatesPolicies.ApiUser)]
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {

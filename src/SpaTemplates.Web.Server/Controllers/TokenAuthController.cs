@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using SpaTemplates.Domain;
+using SpaTemplates.Web.Server.AppConsts;
 using SpaTemplates.Web.Server.Authentication.JwtBearer;
 using SpaTemplates.Web.Server.ViewModels;
 
@@ -71,7 +72,8 @@ namespace SpaTemplates.Web.Server.Controllers
                 return new ClaimsIdentity(new GenericIdentity(userName, "Token"), new[]
                 {
                     new Claim(JwtRegisteredClaimNames.Sub, userName),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(SpaTemplatesClaimTypes.Role,SpaTemplatesClaimValues.ApiAccess),
                 });
             }
 

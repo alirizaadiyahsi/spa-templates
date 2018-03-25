@@ -12,6 +12,8 @@ using SpaTemplates.Application;
 using SpaTemplates.Domain;
 using SpaTemplates.EntityFrameworkCore;
 using SpaTemplates.Web.Server.ActionFilters;
+using SpaTemplates.Web.Server.AppConsts;
+using SpaTemplates.Web.Server.Authentication;
 using SpaTemplates.Web.Server.Authentication.JwtBearer;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -66,6 +68,12 @@ namespace SpaTemplates.Web.Server
                     ValidAudience = Configuration["Authentication:JwtBearer:Audience"],
                     IssuerSigningKey = _signingKey
                 };
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(SpaTemplatesPolicies.ApiUser,
+                    policy => policy.RequireClaim(SpaTemplatesClaimTypes.Role, SpaTemplatesClaimValues.ApiAccess));
             });
 
             services.AddMvc(options => options.Filters.Add<SpaTemplatesContextActionFilter>());
