@@ -48,8 +48,8 @@ namespace SpaTemplates.Web.Server
             var jwtAppSettingOptions = Configuration.GetSection(nameof(TokenAuthConfiguration));
             services.Configure<TokenAuthConfiguration>(options =>
             {
-                options.Issuer = jwtAppSettingOptions[nameof(TokenAuthConfiguration.Issuer)];
-                options.Audience = jwtAppSettingOptions[nameof(TokenAuthConfiguration.Audience)];
+                options.Issuer = Configuration["Authentication:JwtBearer:Issuer"];
+                options.Audience = Configuration["Authentication:JwtBearer:Audience"];
                 options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
             });
             services.AddAuthentication(options =>

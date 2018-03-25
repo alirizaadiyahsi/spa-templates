@@ -7,7 +7,8 @@ using SpaTemplates.Web.Server.AppConsts;
 
 namespace SpaTemplates.Web.Server.Controllers
 {
-    [Authorize(Policy = SpaTemplatesPolicies.ApiUser)]
+    //[Authorize(Policy = SpaTemplatesPolicies.ApiUser)]
+    [Authorize]
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {

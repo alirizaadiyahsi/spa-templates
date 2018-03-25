@@ -73,7 +73,7 @@ namespace SpaTemplates.Web.Server.Controllers
                 {
                     new Claim(JwtRegisteredClaimNames.Sub, userName),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(SpaTemplatesClaimTypes.Role,SpaTemplatesClaimValues.ApiAccess),
+                    new Claim(SpaTemplatesClaimTypes.Role,SpaTemplatesClaimValues.ApiAccess)
                 });
             }
 
