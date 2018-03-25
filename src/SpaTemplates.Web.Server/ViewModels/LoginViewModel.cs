@@ -1,6 +1,6 @@
 ﻿namespace SpaTemplates.Web.Server.ViewModels
 {
-    public class CredentialsViewModel
+    public class LoginViewModel
     {
         public string UserName { get; set; }
 
