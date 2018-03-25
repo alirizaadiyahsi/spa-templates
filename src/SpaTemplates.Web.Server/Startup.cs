@@ -124,6 +124,8 @@ namespace SpaTemplates.Web.Server
                 builder.WithOrigins(Configuration["App:CorsOrigins"]
                     .Split(",", StringSplitOptions.RemoveEmptyEntries)));
 
+            app.UseAuthentication();
+
             app.UseMvc();
         }
     }
