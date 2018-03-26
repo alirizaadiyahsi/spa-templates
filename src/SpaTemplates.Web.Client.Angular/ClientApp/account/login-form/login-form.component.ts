@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Credentials } from '../../shared/models/credentials.interface';
+import { LoginModel } from '../../shared/models/LoginModel';
 import { UserService } from '../../shared/services/user.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   errors: string;
   isRequesting: boolean;
   submitted: boolean = false;
-  credentials: Credentials = { email: '', password: '' };
+  credentials: LoginModel = { email: '', password: '' };
 
   constructor(private userService: UserService, private router: Router,private activatedRoute: ActivatedRoute) { }
 

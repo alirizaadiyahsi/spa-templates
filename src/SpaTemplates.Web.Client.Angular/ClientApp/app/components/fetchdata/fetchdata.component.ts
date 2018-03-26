@@ -5,19 +5,13 @@ import { Http } from '@angular/http';
     selector: 'fetchdata',
     templateUrl: './fetchdata.component.html'
 })
+
 export class FetchDataComponent {
-    forecasts: IWeatherForecast[];
+    forecasts: WeatherForecast[];
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
         http.get(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
-            this.forecasts = result.json() as IWeatherForecast[];
+            this.forecasts = result.json() as WeatherForecast[];
         }, error => console.error(error));
     }
-}
-
-interface IWeatherForecast {
-    dateFormatted: string;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
 }

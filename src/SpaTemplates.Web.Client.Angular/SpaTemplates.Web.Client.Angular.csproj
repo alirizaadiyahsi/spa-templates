@@ -20,6 +20,20 @@
     <Content Remove="ClientApp\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\shared\models\LoginModel.ts" />
+    <None Remove="ClientApp\shared\models\RegisterModel.ts" />
+    <None Remove="ClientApp\shared\services\BaseService.ts" />
+    <None Remove="ClientApp\shared\services\file.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\shared\models\RegisterModel.ts" />
+    <TypeScriptCompile Include="ClientApp\shared\models\LoginModel.ts" />
+    <TypeScriptCompile Include="ClientApp\shared\services\BaseService.ts" />
+    <TypeScriptCompile Include="ClientApp\shared\services\file.ts" />
+  </ItemGroup>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
