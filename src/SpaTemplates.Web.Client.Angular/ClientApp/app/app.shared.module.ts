@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
+import { AuthGuard } from './auth-guard';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -23,11 +25,12 @@ import { CounterComponent } from './components/counter/counter.component';
         HttpModule,
         FormsModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
-            { path: '**', redirectTo: 'home' }
+            //todo: add AuthGuard to root address for example: domain.com/dashboard
+            { path: '', redirectTo: 'home', pathMatch: 'full', canActivate: [AuthGuard]  },
+            { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+            { path: 'counter', component: CounterComponent, canActivate: [AuthGuard] },
+            { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthGuard] },
+            { path: '**', redirectTo: 'home', canActivate: [AuthGuard]  }
         ])
     ]
 })

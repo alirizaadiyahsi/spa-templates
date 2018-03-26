@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/Rx';
 
 // Add the RxJS Observable operators we need in this app.
-import '../../rxjs-operators';
+import 'rxjs/Rx';
 
 @Injectable()
 
@@ -29,8 +29,8 @@ export class UserService extends BaseService {
         this.authNavStatusSource.next(this.loggedIn);
     }
 
-    register(email: string, password: string, firstName: string, lastName: string, location: string): Observable<RegisterModel> {
-        const body = JSON.stringify({ email, password, firstName, lastName, location });
+    register(email: string, password: string, userName: string): Observable<RegisterModel> {
+        const body = JSON.stringify({ email, password, userName });
         const headers = new Headers({ 'Content-Type': 'application/json' });
         const options = new RequestOptions({ headers: headers });
 

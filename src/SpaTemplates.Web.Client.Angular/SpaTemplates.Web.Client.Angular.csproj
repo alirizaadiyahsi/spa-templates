@@ -21,6 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\authenticate-xhr-backend.ts" />
+    <None Remove="ClientApp\auth-guard.ts" />
     <None Remove="ClientApp\shared\models\login-model.ts" />
     <None Remove="ClientApp\shared\models\register-model.ts" />
     <None Remove="ClientApp\shared\services\base-service.ts" />
@@ -28,6 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\auth-guard.ts" />
+    <TypeScriptCompile Include="ClientApp\app\authenticate-xhr-backend.ts" />
     <TypeScriptCompile Include="ClientApp\shared\models\register-model.ts" />
     <TypeScriptCompile Include="ClientApp\shared\models\login-model.ts" />
     <TypeScriptCompile Include="ClientApp\shared\services\base-service.ts" />
