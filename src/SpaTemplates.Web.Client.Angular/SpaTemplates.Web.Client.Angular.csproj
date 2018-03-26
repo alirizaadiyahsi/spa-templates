@@ -21,17 +21,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\shared\models\LoginModel.ts" />
-    <None Remove="ClientApp\shared\models\RegisterModel.ts" />
-    <None Remove="ClientApp\shared\services\BaseService.ts" />
-    <None Remove="ClientApp\shared\services\file.ts" />
+    <None Remove="ClientApp\shared\models\login-model.ts" />
+    <None Remove="ClientApp\shared\models\register-model.ts" />
+    <None Remove="ClientApp\shared\services\base-service.ts" />
+    <None Remove="ClientApp\shared\services\user-service.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\shared\models\RegisterModel.ts" />
-    <TypeScriptCompile Include="ClientApp\shared\models\LoginModel.ts" />
-    <TypeScriptCompile Include="ClientApp\shared\services\BaseService.ts" />
-    <TypeScriptCompile Include="ClientApp\shared\services\file.ts" />
+    <TypeScriptCompile Include="ClientApp\shared\models\register-model.ts" />
+    <TypeScriptCompile Include="ClientApp\shared\models\login-model.ts" />
+    <TypeScriptCompile Include="ClientApp\shared\services\base-service.ts" />
+    <TypeScriptCompile Include="ClientApp\shared\services\user-service.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
